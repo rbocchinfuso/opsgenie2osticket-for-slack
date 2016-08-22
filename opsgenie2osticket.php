@@ -80,17 +80,17 @@ if($text == 'help'){ // print help
   echo $msg;
 }
 
-if($text == 'version'){ // print mode
+if($text == 'version'){ // return version
   $msg = "ticketbot version $version";
   die($msg);
   echo $msg;
 }
-if($text == 'mode'){ // print mode
+if($text == 'mode'){ // return mode
   $msg = "ticketbot is is running in $mode mode";
   die($msg);
   echo $msg;
 }
-if($text == 'shortnames'){ // print shortname lookup
+if($text == 'shortnames'){ // return shortname lookup
   $msg = file_get_contents($CustLookup);
   die($msg);
   echo $msg;
@@ -174,7 +174,6 @@ if($debug=='1') {
 
 /*
 // Add in attachments here if necessary
-// Note: there is something with this wrong with the file attachment here it does not work.
 $data['attachments'][] =
 array('file.txt' =>
         'data:text/plain;base64;'
