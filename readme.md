@@ -60,5 +60,17 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
     // OpsGenie API Key
     $OpsGenieAPIkey = 'PUTyourOpsGenieAPIkeyHERE';
 ``` 
-    
-##### Noteworthy
+
+##### Usage
+...
+    Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
+     Customer Shortnames:  test, fs
+     Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
+     e.g. - /ticket ast;7205;1
+     Other commands:
+       /ticket mode - return ticketbot run mode
+       /ticket shortnames - return shortname list
+...
+
+
+##### Notes
