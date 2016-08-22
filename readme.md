@@ -61,7 +61,7 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
     $OpsGenieAPIkey = 'PUTyourOpsGenieAPIkeyHERE';
 ``` 
 
-##### Usage
+##### Slash command syntax
 ```
     Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
      Customer Shortnames:  test1, test2, test3
