@@ -3,7 +3,7 @@
 Custom Slack slash command to push OpsGenie alerts into osTicket.
 
 ## Requirements
-- A customer slash command on a Slack team
+- A custom slash command on a Slack team
 - A web server running PHP5 with cURL enabled
 
 ## Usage
