@@ -62,6 +62,7 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
 ``` 
 
 ##### Usage
+
 ...
     Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
      Customer Shortnames:  test, fs
