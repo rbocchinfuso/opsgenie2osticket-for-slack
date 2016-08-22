@@ -153,14 +153,14 @@ $OpsGenieDesciption = $obj->description;
 $data = array(
     'name'          =>          $user,  // from name aka User/Client Name
     'email'         =>          $email,  // from email aka User/Client Email
-	'phone'   	    =>          $phone,  // phone number aka User/Client Phone Number
+    'phone'   	    =>          $phone,  // phone number aka User/Client Phone Number
     'subject'       =>          $OpsGenieMessage . " [OpsGenie2osTicket-for-Slack]",  // test subject, aka Issue Summary
     'message'       =>          $OpsGenieDesciption . "\n\n -------------------- \n ### Ticket created using OpsGenie2osTicket-for-Slack ###",  // test ticket body, aka Issue Details.
     'ip'            =>          $_SERVER['REMOTE_ADDR'], // Should be IP address of the machine thats trying to open the ticket.
-	'topicId'       =>          '1', // the help Topic that you want to use for the ticket
-	'priorityId'    =>          $priority, // ticket priority
-	//'Agency'      =>          '100', //this is an example of a custom list entry. This should be the number of the entry.
-	//'Site'	    =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
+    'topicId'       =>          '1', // the help Topic that you want to use for the ticket
+    'priorityId'    =>          $priority, // ticket priority
+    //'Agency'      =>          '100', //this is an example of a custom list entry. This should be the number of the entry.
+    //'Site'	    =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
     'attachments'   => array()
 );
 
