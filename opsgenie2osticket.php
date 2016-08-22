@@ -69,7 +69,7 @@ if($SlackToken == 'PUTyourSlackTokenHERE'){ // replace this with the token from 
 // Check for help 
 if($text == 'help'){ // print help
   $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
-  Customer Shortnames:  test, fs
+  Customer Shortnames:  test1, test2. test3
   Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
   e.g. - /ticket ast;7205;1
   Other commands:

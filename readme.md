@@ -64,7 +64,7 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
 ##### Usage
 ```
     Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
-     Customer Shortnames:  test, fs
+     Customer Shortnames:  test1, test2, test3
      Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
      e.g. - /ticket ast;7205;1
      Other commands:
