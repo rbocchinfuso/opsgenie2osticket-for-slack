@@ -63,6 +63,7 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
 
 ##### Usage
 ...
+
     Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
      Customer Shortnames:  test, fs
      Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
@@ -70,6 +71,7 @@ _Note:  Be sure you used the proper IP address when adding the API Key.  Check y
      Other commands:
        /ticket mode - return ticketbot run mode
        /ticket shortnames - return shortname list
+
 ...
 
 
