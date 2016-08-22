@@ -73,8 +73,15 @@ if($text == 'help'){ // print help
   Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
   e.g. - /ticket ast;7205;1
   Other commands:
+    /ticket version - return ticketbot version
     /ticket mode - return ticketbot run mode
     /ticket shortnames - return shortname list";
+  die($msg);
+  echo $msg;
+}
+
+if($text == 'version'){ // print mode
+  $msg = "ticketbot version $version";
   die($msg);
   echo $msg;
 }

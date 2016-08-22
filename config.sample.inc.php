@@ -3,6 +3,9 @@
 // If 1, display things to debug.
 $debug='0';
 
+// Version
+$version = 1.20160822;
+
 // If "y" use osTicket Production settings
 $prod='n';
 
