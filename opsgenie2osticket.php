@@ -66,34 +66,61 @@ if($SlackToken == 'PUTyourSlackTokenHERE'){ // replace this with the token from 
 }
 
 
-// Check for help 
-if($text == 'help'){ // print help
-  $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
-  Customer Shortnames:  test1, test2. test3
-  Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
-  e.g. - /ticket ast;7205;1
-  Other commands:
-    /ticket version - return ticketbot version
-    /ticket mode - return ticketbot run mode
-    /ticket shortnames - return shortname list";
-  die($msg);
-  echo $msg;
+switch ($text) {
+    case NULL:  // return help
+      $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
+      Customer Shortnames:  test1, test2. test3
+      Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
+      e.g. - /ticket ast;7205;1
+      Other commands:
+        /ticket help - return ticketbot help
+        /ticket version - return ticketbot version
+        /ticket mode - return ticketbot run mode
+        /ticket shortnames - return shortname list";
+      die($msg);
+      echo $msg;
+      break;
+    case 'help':  // return help
+      $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
+      Customer Shortnames:  test1, test2. test3
+      Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
+      e.g. - /ticket ast;7205;1
+      Other commands:
+        /ticket help - return ticketbot help
+        /ticket version - return ticketbot version
+        /ticket mode - return ticketbot run mode
+        /ticket shortnames - return shortname list";
+      die($msg);
+      echo $msg;
+      break;
+    case 'version':  // return version
+      $msg = "ticketbot version $version";
+      die($msg);
+      echo $msg;
+      break;
+    case 'mode':  // return mode
+      $msg = "ticketbot is is running in $mode mode";
+      die($msg);
+      echo $msg;
+      break;
+    case 'shortnames':  // return shortname lookup
+      $msg = file_get_contents($CustLookup);
+      die($msg);
+      echo $msg;
+      break;
 }
 
-if($text == 'version'){ // return version
-  $msg = "ticketbot version $version";
-  die($msg);
-  echo $msg;
-}
-if($text == 'mode'){ // return mode
-  $msg = "ticketbot is is running in $mode mode";
-  die($msg);
-  echo $msg;
-}
-if($text == 'shortnames'){ // return shortname lookup
-  $msg = file_get_contents($CustLookup);
-  die($msg);
-  echo $msg;
+
+
+// validate query format
+$regex = '/\w+;\w+;\w+/';
+if (preg_match($regex, $text)) {
+    // the expression matches the query string
+} else {
+    // if preg_match() returns false, then the regex does not match the string
+    $msg = "ERROR:: malformed query";
+    die($msg);
+    echo $msg;
 }
 
 
@@ -160,7 +187,7 @@ $data = array(
     'topicId'       =>          '1', // the help Topic that you want to use for the ticket
     'priorityId'    =>          $priority, // ticket priority
     //'Agency'      =>          '100', //this is an example of a custom list entry. This should be the number of the entry.
-    //'Site'	    =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
+    //'Site'	      =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
     'attachments'   => array()
 );
 
