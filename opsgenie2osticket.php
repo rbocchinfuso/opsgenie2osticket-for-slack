@@ -1,6 +1,6 @@
 <?php
  
- /*
+/*
  
 opsgenie2osticket-for-slack provides a the ability to create osTicket tickets from OpsGenie alerts from within Slack.
 
@@ -26,8 +26,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-* @category   CategoryName
-* @package    PackageName
+* @package    opsgenie2osticket
 * @author     Richard Bocchinfuso <rbocchinfuso@gmail.com>
 * @copyright  2016 Richard J. Bocchinfuso
 * @license    MIT License
@@ -35,7 +34,6 @@ SOFTWARE.
 * @link       https://github.com/rbocchinfuso/opsgenie2osticket-for-slack
 
 */
-
 
 include_once('config.inc.php');
 
