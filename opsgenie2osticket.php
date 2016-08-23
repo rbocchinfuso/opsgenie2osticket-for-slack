@@ -1,4 +1,41 @@
 <?php
+ 
+ /*
+ 
+opsgenie2osticket-for-slack provides a the ability to create osTicket tickets from OpsGenie alerts from within Slack.
+
+MIT License
+
+Copyright (c) [2016] [Richard J. Bocchinfuso]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+* @category   CategoryName
+* @package    PackageName
+* @author     Richard Bocchinfuso <rbocchinfuso@gmail.com>
+* @copyright  2016 Richard J. Bocchinfuso
+* @license    MIT License
+* @version    v1.201608
+* @link       https://github.com/rbocchinfuso/opsgenie2osticket-for-slack
+
+*/
+
 
 include_once('config.inc.php');
 
@@ -66,9 +103,8 @@ if($SlackToken == 'PUTyourSlackTokenHERE'){ // replace this with the token from 
 }
 
 
-switch ($text) {
-    case NULL:  // return help
-      $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
+// help text
+$help = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
       Customer Shortnames:  test1, test2. test3
       Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
       e.g. - /ticket ast;7205;1
@@ -77,19 +113,15 @@ switch ($text) {
         /ticket version - return ticketbot version
         /ticket mode - return ticketbot run mode
         /ticket shortnames - return shortname list";
+
+switch ($text) {
+    case NULL:  // return help
+      $msg = $help;
       die($msg);
       echo $msg;
       break;
     case 'help':  // return help
-      $msg = "Usage:  /ticket [Customer Shortname;OpsGenie TinyID;Ticket Priority]
-      Customer Shortnames:  test1, test2. test3
-      Ticket Priority:  1 = Low | 2 = Normal | 3 = High | 4 = Emergency
-      e.g. - /ticket ast;7205;1
-      Other commands:
-        /ticket help - return ticketbot help
-        /ticket version - return ticketbot version
-        /ticket mode - return ticketbot run mode
-        /ticket shortnames - return shortname list";
+      $msg = $help;
       die($msg);
       echo $msg;
       break;
@@ -187,7 +219,7 @@ $data = array(
     'topicId'       =>          '1', // the help Topic that you want to use for the ticket
     'priorityId'    =>          $priority, // ticket priority
     //'Agency'      =>          '100', //this is an example of a custom list entry. This should be the number of the entry.
-    //'Site'	      =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
+    //'Site'        =>          'Miami', // this is an example of a custom text field.  You can push anything into here you want.	
     'attachments'   => array()
 );
 
